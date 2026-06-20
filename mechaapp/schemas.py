@@ -1,9 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
 
-
-# -------- USUARIO --------
-
 class UsuarioCreate(BaseModel):
     nombre: str
     correo: EmailStr
@@ -22,8 +19,6 @@ class UsuarioResponse(BaseModel):
     class Config:
         from_attributes = True
 
-
-# -------- TORNEO --------
 
 class TorneoCreate(BaseModel):
     nombre_torneo: str
