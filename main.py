@@ -94,13 +94,10 @@ def inicio():
         "mensaje": "Bienvenido a la API de MECHAPP"
     }
 
-# GET
 @app.get("/usuarios")
 def obtener_usuarios():
     return usuarios
 
-
-# GET POR ID
 @app.get("/usuarios/{usuario_id}")
 def obtener_usuario(usuario_id: int):
 
@@ -113,8 +110,6 @@ def obtener_usuario(usuario_id: int):
         detail="Usuario no encontrado"
     )
 
-
-# POST
 @app.post("/usuarios")
 def crear_usuario(usuario: Usuario):
 
@@ -133,7 +128,6 @@ def crear_usuario(usuario: Usuario):
     }
 
 
-# PUT
 @app.put("/usuarios/{usuario_id}")
 def actualizar_usuario(usuario_id: int, usuario_actualizado: Usuario):
 
@@ -152,8 +146,6 @@ def actualizar_usuario(usuario_id: int, usuario_actualizado: Usuario):
         detail="Usuario no encontrado"
     )
 
-
-# DELETE
 @app.delete("/usuarios/{usuario_id}")
 def eliminar_usuario(usuario_id: int):
 
@@ -172,14 +164,11 @@ def eliminar_usuario(usuario_id: int):
         detail="Usuario no encontrado"
     )
 
-
-# GET
 @app.get("/torneos")
 def obtener_torneos():
     return torneos
 
 
-# POST
 @app.post("/torneos")
 def crear_torneo(torneo: Torneo):
 
@@ -191,7 +180,6 @@ def crear_torneo(torneo: Torneo):
     }
 
 
-# PUT
 @app.put("/torneos/{torneo_id}")
 def actualizar_torneo(torneo_id: int, torneo_actualizado: Torneo):
 
@@ -211,7 +199,6 @@ def actualizar_torneo(torneo_id: int, torneo_actualizado: Torneo):
     )
 
 
-# DELETE
 @app.delete("/torneos/{torneo_id}")
 def eliminar_torneo(torneo_id: int):
 
@@ -231,13 +218,11 @@ def eliminar_torneo(torneo_id: int):
     )
 
 
-# GET
 @app.get("/inscripciones")
 def obtener_inscripciones():
     return inscripciones
 
 
-# POST
 @app.post("/inscripciones")
 def crear_inscripcion(inscripcion: Inscripcion):
 
@@ -267,10 +252,6 @@ def eliminar_inscripcion(inscripcion_id: int):
         status_code=404,
         detail="Inscripción no encontrada"
     )
-
-# =====================================================
-# CRUD PAGOS
-# =====================================================
 
 # GET
 @app.get("/pagos")
